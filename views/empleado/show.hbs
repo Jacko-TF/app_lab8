@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Detalle del Empleado</title>
+    </head>
+    <body>
+        <div class="container">
+            <h3><a href="/productos">Lista de Empleados</a></h3>
+            <h1>Detalle del Empleado</h1>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>{{ empleados.nombre }}</td>
+                    </tr>
+                    <tr>
+                        <td>Apellido</td>
+                        <td>{{ empleados.apellido }}</td>
+                    </tr>
+                    <tr>
+                        <td>Edad</td>
+                        <td>{{ empleados.edad }}</td>
+                    </tr>
+                    <tr>
+                        <td>Direccion</td>
+                        <td>{{ empleados.direccion }}</td>
+                    </tr>
+                    <tr>
+                        <td>Area</td>
+                        <td>{{ empleados.area }}</td>
+                    </tr>
+                    <tr>
+                        <td>Sueldo</td>
+                        <td>{{ empleados.sueldo }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3><a href="/empleados/edit/{{ empleados._id }}">EDIT</a></h3>
+            <form action="/empleados/delete/{{ empleados._id }}" method="post">
+                <button type="submit">DELETE</button>
+            </form>
+        </div>
+    </body>
+</html>

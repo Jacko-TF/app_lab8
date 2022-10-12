@@ -1,0 +1,31 @@
+<h1> Productos</h1>
+        <div class="container">
+            <h3><a href="/productos/create">Crear Producto</a></h3>
+            <h1>Lista de Productos</h1>
+            {{#if productos }}
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Marca</th>
+                            <th>Stock</th>
+                            <th>Precio Compra</th>
+                            <th>Precio Venta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{# each productos }}
+                        <tr>
+                            <td><a href="/productos/show/{{ _id }}">{{ nombre }}</a></td>
+                            <td>{{ marca }}</td>
+                            <td>{{ stock }}</td>
+                            <td>{{ precio_compra }}</td>
+                            <td>{{ precio_venta }}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            {{~^~}}
+                <div>Productos no encontrados.</div>
+            {{/if}}
+        </div>
